@@ -1,0 +1,34 @@
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Text;
+    using System.Threading.Tasks;
+
+    namespace Program176
+    {
+    internal class Program
+    {
+        static void Main()
+        {
+            Console.Write("Режим светофора (1–Красный, 2–Жёлтый, 3–Зелёный, 4–Мигающий жёлтый): ");
+            if (!int.TryParse(Console.ReadLine(), out int light))
+            {
+                Console.WriteLine("Ошибка.");
+                return;
+            }
+
+            string advice;
+            switch (light)
+            {
+                case 1: advice = "Стоп. Движение запрещено."; break;
+                case 2: advice = "Приготовиться к остановке (если возможно)."; break;
+                case 3: advice = "Можно двигаться."; break;
+                case 4: advice = "Внимание: перекрёсток нерегулируемый, двигайтесь осторожно."; break;
+                default:
+                    Console.WriteLine("Неверный режим.");
+                    return;
+            }
+            Console.WriteLine(advice);
+        }
+    }
+    }
